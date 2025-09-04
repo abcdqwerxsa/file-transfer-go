@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "file-transfer-frontend",
+  "builds": [
+    {
+      "src": "chuan-next/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/chuan-next/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_BACKEND_URL": "https://your-go-backend-domain.com",
+    "NEXT_PUBLIC_WS_URL": "wss://your-go-backend-domain.com/ws",
+    "NEXT_PUBLIC_API_BASE_URL": "https://your-go-backend-domain.com"
+  }
+}
